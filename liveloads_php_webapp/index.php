@@ -6,9 +6,10 @@
     <title>LiveLoads App</title>
 </head>
 <body>
-<h1><?php echo 'LiveLoads App'; ?></h1>
+<h1><?php echo "LiveLoads App"; ?></h1>
 
-    <form method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
+    <?php if ($_SERVER["REQUEST_METHOD"] == "GET") { ?>
+    <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <div class="column">
           
             <label for="ship_notice_date">Ship Notice Date:</label>
@@ -71,19 +72,16 @@
         <input type="submit" value="Submit">
 
     </form>
+    <?php } ?>
 
-    <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // collect value of input field
-    $name = $_POST['ship_notice_date'];
-    if (empty($name)) {
-        echo "Name is empty";
-    } else {
-        echo $name;
-    }
-}
-?>
+    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // collect value of input field
+        $name = $_POST["ship_notice_date"];
+        if (empty($name)) {
+            echo "Name is empty";
+        } else {
+            echo $name;
+        }
+    } ?>
 </body>
 </html>
-
-
