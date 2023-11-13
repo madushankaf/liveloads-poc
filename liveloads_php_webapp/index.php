@@ -102,7 +102,7 @@
         $fields .= $_POST["name"] . "*";
         $fields .= $_POST["identification_code"] . "*";
         $fields .= $_POST["identification_qualifier"] . "~";
-        $fields .= "CTT*".$_POST["NumberOfLineItems"] . "*";
+        $fields .= "CTT*".$_POST["number_of_line_items"] . "*";
         $fields .= $_POST["hash_total"] . "*";
         $fields .= $_POST["weight_total"] . "*";
         $fields .= $_POST["weight_unit"] . "~";
@@ -114,9 +114,24 @@
         $clientId = getenv("CLIENT_ID");
         $clientSecret = getenv("CLIENT_SECRET");
         $credentials = base64_encode($clientId . ":" . $clientSecret);
-        $curlCommand = 'curl -k -X POST https://api.asgardeo.io/t/poc4liveloads/oauth2/token -d "grant_type=client_credentials" -H "Authorization: Basic ' . $credentials . '"';
-        $curlOutput = shell_exec($curlCommand);
-        $accessToken = json_decode($curlOutput)->access_token;
+        $clientId = getenv("CLIENT_ID");
+        $clientSecret = getenv("CLIENT_SECRET");
+        $credentials = base64_encode($clientId . ":" . $clientSecret);
+
+        $postData = array(
+            'grant_type' => 'client_credentials'
+        );
+        $options = array(
+            'http' => array(
+                'header' => "Content-type: application/x-www-form-urlencoded\r\n" .
+                            "Authorization: Basic " . $credentials . "\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($postData)
+            )
+        );
+        $context = stream_context_create($options);
+        $accessToken = file_get_contents('https://api.asgardeo.io/t/poc4liveloads/oauth2/token', false, $context);
+        $accessToken = json_decode($accessToken)->access_token;
 
         echo $accessToken;
 
