@@ -64,7 +64,7 @@
             <input type="text" id="hash_total" name="hash_total"><br><br>
             <label for="weight_total">Weight Total:</label>
             <input type="text" id="weight_total" name="weight_total"><br><br>
-            <label for="hash_total">Weight Unit:</label>
+            <label for="weight_unit">Weight Unit:</label>
             <input type="text" id="weight_unit" name="weight_unit"><br><br>
             <label for="number_of_included_segments">Number of Included Segments:</label>
             <input type="text" id="number_of_included_segments" name="number_of_included_segments"><br><br>
@@ -103,7 +103,7 @@
         $fields .= $_POST["identification_code"] . "*";
         $fields .= $_POST["identification_qualifier"] . "~";
         $fields .= $_POST["number_of_line_items"] . "*";
-        $fields .= "CTT*".$_POST["hash_total"] . "*";
+        $fields .= "CTT*".$_POST["NumberOfLineItems"] . "*";
         $fields .= $_POST["hash_total"] . "*";
         $fields .= $_POST["weight_total"] . "*";
         $fields .= $_POST["weight_unit"] . "~";
