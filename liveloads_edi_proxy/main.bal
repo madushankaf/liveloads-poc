@@ -5,6 +5,7 @@ const string shipNoticeManifestMessageType = "ShipNoticeManifest";
 configurable string tokenUrl = "";
 configurable string clientId = "";
 configurable string clientSecret = "";
+configurable string shippingBackEndUrl = "";
 
 service / on new http:Listener(8090) {
     resource function post [string msgTypeId](http:Request req) returns string|error|http:Response|http:Ok|http:InternalServerError {
@@ -14,7 +15,7 @@ service / on new http:Listener(8090) {
             ShipNoticeManifest shipNoticeManifest = check fromEdiString(ediMsg);
             log:printInfo("shipNoticeManifest", shipNoticeManifest = shipNoticeManifest);
 
-            http:Client shippingBackendClient = check new ("localhost:9090",
+            http:Client shippingBackendClient = check new (shippingBackEndUrl,
                 auth = {
                     tokenUrl: tokenUrl,
                     clientId: clientId,
