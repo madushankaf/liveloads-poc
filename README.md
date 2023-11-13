@@ -2,6 +2,7 @@
 
 
 ##sample EDI message
+
 ST*856*0001*005010X12~
 BSN*20181101*1349*GMT~
 HL*1**S~
