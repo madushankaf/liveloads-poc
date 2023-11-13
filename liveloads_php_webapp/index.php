@@ -102,7 +102,6 @@
         $fields .= $_POST["name"] . "*";
         $fields .= $_POST["identification_code"] . "*";
         $fields .= $_POST["identification_qualifier"] . "~";
-        $fields .= $_POST["number_of_line_items"] . "*";
         $fields .= "CTT*".$_POST["NumberOfLineItems"] . "*";
         $fields .= $_POST["hash_total"] . "*";
         $fields .= $_POST["weight_total"] . "*";
