@@ -114,10 +114,6 @@
         $clientId = getenv("CLIENT_ID");
         $clientSecret = getenv("CLIENT_SECRET");
         $credentials = base64_encode($clientId . ":" . $clientSecret);
-        $clientId = getenv("CLIENT_ID");
-        $clientSecret = getenv("CLIENT_SECRET");
-        $credentials = base64_encode($clientId . ":" . $clientSecret);
-
         $postData = array(
             'grant_type' => 'client_credentials'
         );
@@ -133,18 +129,22 @@
         $accessToken = file_get_contents('https://api.asgardeo.io/t/poc4liveloads/oauth2/token', false, $context);
         $accessToken = json_decode($accessToken)->access_token;
 
-        echo $accessToken;
+     
 
         // Use the $accessToken as needed
-        $endpoint = 'https://8d25823b-969a-43a8-84ae-b71755f068b7-dev.e1-us-east-azure.choreoapis.dev/ftyz/liveloads-edi-proxy/endpoint-8090-8b1/v1/ShipNoticeManifest';
-        $ch = curl_init($endpoint);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $accessToken));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields); // Add this line to set the request body
-        curl_setopt($ch, CURLOPT_POST, true); // Add this line to specify that it's a POST request
-        $response = curl_exec($ch);
-        curl_close($ch);
-        echo $response;
+        
+        $optionsForApi = array(
+            'http' => array(
+                'header' => "text/plain\r\n" .
+                            "Authorization: Bearer " . $accessToken . "\r\n",
+                'method' => 'POST',
+                'content' => http_build_query($fields)
+            )
+        );
+        $contextForApiCall = stream_context_create($optionsForApi);
+        $shippingNoticeSaved = file_get_contents('https://8d25823b-969a-43a8-84ae-b71755f068b7-dev.e1-us-east-azure.choreoapis.dev/ftyz/liveloads-edi-proxy/endpoint-8090-8b1/v1/ShipNoticeManifest', false, $contextForApiCall);
+
+        echo $shippingNoticeSaved;
 
         // Use the $accessToken as needed
     } ?>
