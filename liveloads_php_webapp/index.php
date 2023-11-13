@@ -110,6 +110,28 @@
         $fields .= $_POST["transaction_set_control_number"] . "~";
 
         echo $fields;
+
+        $clientId = getenv("CLIENT_ID");
+        $clientSecret = getenv("CLIENT_SECRET");
+        $credentials = base64_encode($clientId . ":" . $clientSecret);
+        $curlCommand = 'curl -k -X POST https://api.asgardeo.io/t/poc4liveloads/oauth2/token -d "grant_type=client_credentials" -H "Authorization: Basic ' . $credentials . '"';
+        $curlOutput = shell_exec($curlCommand);
+        $accessToken = json_decode($curlOutput)->access_token;
+
+        echo $accessToken;
+
+        // Use the $accessToken as needed
+        $endpoint = 'https://8d25823b-969a-43a8-84ae-b71755f068b7-dev.e1-us-east-azure.choreoapis.dev/ftyz/liveloads-edi-proxy/endpoint-8090-8b1/v1/ShipNoticeManifest';
+        $ch = curl_init($endpoint);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $accessToken));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields); // Add this line to set the request body
+        curl_setopt($ch, CURLOPT_POST, true); // Add this line to specify that it's a POST request
+        $response = curl_exec($ch);
+        curl_close($ch);
+        echo $response;
+
+        // Use the $accessToken as needed
     } ?>
 </body>
 </html>
