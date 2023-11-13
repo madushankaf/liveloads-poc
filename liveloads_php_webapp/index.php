@@ -138,7 +138,7 @@
                 'header' => "text/plain\r\n" .
                             "Authorization: Bearer " . $accessToken . "\r\n",
                 'method' => 'POST',
-                'content' => http_build_query($fields)
+                'content' => $fields
             )
         );
         $contextForApiCall = stream_context_create($optionsForApi);
