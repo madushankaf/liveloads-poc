@@ -1,13 +1,4 @@
 const express = require("express");
-const axios = require('axios');
-
-const Campaign = Object.freeze({
-    id: "",
-    createdAt: "",
-    Company: "",
-    CampaginName: "",
-    Advertiser: "",
-  });
 
 const app = express();
 
@@ -19,8 +10,6 @@ app.post("/shippingNotices", (req, res) => {
   const shippingNotice = req.body;
   console.log(shippingNotice);
 });
-
-
 
 
 

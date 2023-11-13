@@ -21,6 +21,118 @@ paths:
     post:
       summary: add a shipping_notice
       operationId: SetNewShippingNotice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Header:
+                  type: object
+                  properties:
+                    Identifier:
+                      type: string
+                    ControlNumber:
+                      type: string
+                    Version:
+                      type: string
+                    DocumentType:
+                      type: string
+                ShipNotice:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    Date:
+                      type: string
+                    Time:
+                      type: string
+                    TimeZone:
+                      type: string
+                HierarchicalLevel:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    HierarchicalID:
+                      type: string
+                    HierarchicalParentID:
+                      type: string
+                    HierarchicalLevelCode:
+                      type: string
+                ItemIdentification:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    ProductID:
+                      type: string
+                    ProductDescription:
+                      type: string
+                    ProductType:
+                      type: string
+                    ProductCode:
+                      type: string
+                ItemDetail:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    QuantityShipped:
+                      type: string
+                    PackagingInfo:
+                      type: string
+                    Weight:
+                      type: string
+                    WeightUnit:
+                      type: string
+                ProductDescription:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    ItemDescription:
+                      type: string
+                    CharacteristicCode:
+                      type: string
+                    AdditionalInfo:
+                      type: string
+                    InfoQualifier:
+                      type: string
+                Name:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    EntityIdentifierCode:
+                      type: string
+                    Name:
+                      type: string
+                    IdentificationCode:
+                      type: string
+                    IdentificationQualifier:
+                      type: string
+                TransactionTotals:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    NumberOfLineItems:
+                      type: string
+                    HashTotal:
+                      type: string
+                    WeightTotal:
+                      type: string
+                TransactionSetTrailer:
+                  type: object
+                  properties:
+                    Identification:
+                      type: string
+                    NumberOfIncludedSegments:
+                      type: string
+                    TransactionSetControlNumber:
+                      type: string
       responses:
         "200":
           description: Successful operation
