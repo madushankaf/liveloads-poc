@@ -1,1 +1,13 @@
 # liveloads-poc
+
+
+##sample EDI message
+ST*856*0001*005010X12~
+BSN*20181101*1349*GMT~
+HL*1**S~
+LIN*1*UPC*123456789012*VP~
+SN1*10*EA*500*LB~
+PID**F**Widget~
+N1*ST*Widget Supplier*92*TN~
+CTT*1*100*LB~
+SE*8*0001~
