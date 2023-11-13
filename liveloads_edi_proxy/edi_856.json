@@ -1,0 +1,188 @@
+{
+    "name": "ShipNoticeManifest",
+    "delimiters": {
+        "segment": "~",
+        "field": "*",
+        "component": ":",
+        "repetition": "^"
+    },
+    "segments": [
+        {
+            "code": "ST",
+            "tag": "Header",
+            "fields": [
+                {
+                    "tag": "Identifier"
+                },
+                {
+                    "tag": "ControlNumber"
+                },
+                {
+                    "tag": "Version"
+                },
+                {
+                    "tag": "DocumentType"
+                }
+            ]
+        },
+        {
+            "code": "BSN",
+            "tag": "ShipNotice",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "Date"
+                },
+                {
+                    "tag": "Time"
+                },
+                {
+                    "tag": "TimeZone"
+                }
+            ]
+        },
+        {
+            "code": "HL",
+            "tag": "HierarchicalLevel",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "HierarchicalID"
+                },
+                {
+                    "tag": "HierarchicalParentID"
+                },
+                {
+                    "tag": "HierarchicalLevelCode"
+                },
+                {
+                    "tag": "HierarchicalChildCode"
+                }
+            ]
+        },
+        {
+            "code": "LIN",
+            "tag": "ItemIdentification",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "ProductID"
+                },
+                {
+                    "tag": "ProductDescription"
+                },
+                {
+                    "tag": "ProductType"
+                },
+                {
+                    "tag": "ProductCode"
+                }
+            ]
+        },
+        {
+            "code": "SN1",
+            "tag": "ItemDetail",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "QuantityShipped"
+                },
+                {
+                    "tag": "PackagingInfo"
+                },
+                {
+                    "tag": "Weight"
+                },
+                {
+                    "tag": "WeightUnit"
+                }
+            ]
+        },
+        {
+            "code": "PID",
+            "tag": "ProductDescription",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "ItemDescription"
+                },
+                {
+                    "tag": "CharacteristicCode"
+                },
+                {
+                    "tag": "AdditionalInfo"
+                },
+                {
+                    "tag": "InfoQualifier"
+                }
+            ]
+        },
+        {
+            "code": "N1",
+            "tag": "Name",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "EntityIdentifierCode"
+                },
+                {
+                    "tag": "Name"
+                },
+                {
+                    "tag": "IdentificationCode"
+                },
+                {
+                    "tag": "IdentificationQualifier"
+                }
+            ]
+        },
+        {
+            "code": "CTT",
+            "tag": "TransactionTotals",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "NumberOfLineItems"
+                },
+                {
+                    "tag": "HashTotal"
+                },
+                {
+                    "tag": "WeightTotal"
+                },
+                {
+                    "tag": "WeightUnit"
+                }
+            ]
+        },
+        {
+            "code": "SE",
+            "tag": "TransactionSetTrailer",
+            "fields": [
+                {
+                    "tag": "Identification"
+                },
+                {
+                    "tag": "NumberOfIncludedSegments"
+                },
+                {
+                    "tag": "TransactionSetControlNumber"
+                }
+            ]
+        }
+    ]
+}
