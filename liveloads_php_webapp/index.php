@@ -78,7 +78,8 @@
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // collect value of input field
-        $fields = "ST*856*0001*005010X12~"
+        $fields = ""; // Declare the $fields variable
+        $fields .= "ST*856*0001*005010X12~";
         $fields .= "BSN*".$_POST["ship_notice_date"] . "*";
         $fields .= $_POST["ship_notice_time"] . "*";
         $fields .= $_POST["ship_notice_timezone"] . "~";
