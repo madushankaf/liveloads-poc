@@ -7,8 +7,8 @@
 </head>
 <body>
 <h1><?php echo "LiveLoads App"; ?></h1>
+<?php if ($_SERVER["REQUEST_METHOD"] == "GET") { ?>
 
-    <?php if ($_SERVER["REQUEST_METHOD"] == "GET") { ?>
     <form method="POST" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         <div class="column">
           
@@ -64,6 +64,8 @@
             <input type="text" id="hash_total" name="hash_total"><br><br>
             <label for="weight_total">Weight Total:</label>
             <input type="text" id="weight_total" name="weight_total"><br><br>
+            <label for="hash_total">Weight Unit:</label>
+            <input type="text" id="weight_unit" name="weight_unit"><br><br>
             <label for="number_of_included_segments">Number of Included Segments:</label>
             <input type="text" id="number_of_included_segments" name="number_of_included_segments"><br><br>
             <label for="transaction_set_control_number">Transaction Set Control Number:</label>
@@ -76,12 +78,38 @@
 
     <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // collect value of input field
-        $name = $_POST["ship_notice_date"];
-        if (empty($name)) {
-            echo "Name is empty";
-        } else {
-            echo $name;
-        }
+        $fields = "ST*856*0001*005010X12~"
+        $fields .= "BSN*".$_POST["ship_notice_date"] . "*";
+        $fields .= $_POST["ship_notice_time"] . "*";
+        $fields .= $_POST["ship_notice_timezone"] . "~";
+        $fields .= "HL*".$_POST["hierarchical_id"] . "*";
+        $fields .= $_POST["hierarchical_parent_id"] . "*";
+        $fields .= $_POST["hierarchical_level_code"] . "~";
+        $fields .= "LIN*".$_POST["product_id"] . "*";
+        $fields .= $_POST["product_description"] . "*";
+        $fields .= $_POST["product_type"] . "*";
+        $fields .= $_POST["product_code"] . "~";
+        $fields .= "SN1*".$_POST["quantity_shipped"] . "*";
+        $fields .= $_POST["packaging_info"] . "*";
+        $fields .= $_POST["weight"] . "*";
+        $fields .= $_POST["weight_unit"] . "~";
+        $fields .= "PID*".$_POST["item_description"] . "*";
+        $fields .= $_POST["characteristic_code"] . "*";
+        $fields .= $_POST["additional_info"] . "*";
+        $fields .= $_POST["info_qualifier"] . "~";
+        $fields .= "N1*".$_POST["entity_identifier_code"] . "*";
+        $fields .= $_POST["name"] . "*";
+        $fields .= $_POST["identification_code"] . "*";
+        $fields .= $_POST["identification_qualifier"] . "~";
+        $fields .= $_POST["number_of_line_items"] . "*";
+        $fields .= "CTT*".$_POST["hash_total"] . "*";
+        $fields .= $_POST["hash_total"] . "*";
+        $fields .= $_POST["weight_total"] . "*";
+        $fields .= $_POST["weight_unit"] . "~";
+        $fields .= "SE*".$_POST["number_of_included_segments"] . "*";
+        $fields .= $_POST["transaction_set_control_number"] . "~";
+
+        echo $fields;
     } ?>
 </body>
 </html>
