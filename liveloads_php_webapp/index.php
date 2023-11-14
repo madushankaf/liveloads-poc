@@ -175,9 +175,9 @@
             echo "<div>";
             echo "Shipping Notice Saved:\n";
             echo "</div>";
-            echo "<pre>" . json_encode($shippingNoticeSaved, JSON_PRETTY_PRINT) . "</pre>";
-            echo "\n";
+            echo "<pre>" . nl2br(json_encode($shippingNoticeSaved, JSON_PRETTY_PRINT)) . "</pre>";
             echo "</div>";
+            
 
         } else {
             echo "Error uploading file.";
