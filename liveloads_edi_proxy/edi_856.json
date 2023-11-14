@@ -6,10 +6,12 @@
         "component": ":",
         "repetition": "^"
     },
+    "ignoreSegments": [],
     "segments": [
         {
             "code": "ST",
             "tag": "Header",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identifier"
@@ -25,9 +27,11 @@
                 }
             ]
         },
+       
         {
             "code": "BSN",
             "tag": "ShipNotice",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -46,6 +50,7 @@
         {
             "code": "HL",
             "tag": "HierarchicalLevel",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -67,6 +72,7 @@
         {
             "code": "LIN",
             "tag": "ItemIdentification",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -88,6 +94,7 @@
         {
             "code": "SN1",
             "tag": "ItemDetail",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -109,6 +116,7 @@
         {
             "code": "PID",
             "tag": "ProductDescription",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -130,6 +138,7 @@
         {
             "code": "N1",
             "tag": "Name",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -151,6 +160,7 @@
         {
             "code": "CTT",
             "tag": "TransactionTotals",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"
@@ -172,6 +182,7 @@
         {
             "code": "SE",
             "tag": "TransactionSetTrailer",
+            "minOccurances":1,
             "fields": [
                 {
                     "tag": "Identification"

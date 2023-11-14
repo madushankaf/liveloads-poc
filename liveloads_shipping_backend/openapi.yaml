@@ -28,111 +28,84 @@ paths:
             schema:
               type: object
               properties:
-                Header:
-                  type: object
-                  properties:
-                    Identifier:
-                      type: string
-                    ControlNumber:
-                      type: string
-                    Version:
-                      type: string
-                    DocumentType:
-                      type: string
-                ShipNotice:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    Date:
-                      type: string
-                    Time:
-                      type: string
-                    TimeZone:
-                      type: string
-                HierarchicalLevel:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    HierarchicalID:
-                      type: string
-                    HierarchicalParentID:
-                      type: string
-                    HierarchicalLevelCode:
-                      type: string
-                ItemIdentification:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    ProductID:
-                      type: string
-                    ProductDescription:
-                      type: string
-                    ProductType:
-                      type: string
-                    ProductCode:
-                      type: string
-                ItemDetail:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    QuantityShipped:
-                      type: string
-                    PackagingInfo:
-                      type: string
-                    Weight:
-                      type: string
-                    WeightUnit:
-                      type: string
-                ProductDescription:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    ItemDescription:
-                      type: string
-                    CharacteristicCode:
-                      type: string
-                    AdditionalInfo:
-                      type: string
-                    InfoQualifier:
-                      type: string
-                Name:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    EntityIdentifierCode:
-                      type: string
-                    Name:
-                      type: string
-                    IdentificationCode:
-                      type: string
-                    IdentificationQualifier:
-                      type: string
-                TransactionTotals:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    NumberOfLineItems:
-                      type: string
-                    HashTotal:
-                      type: string
-                    WeightTotal:
-                      type: string
-                TransactionSetTrailer:
-                  type: object
-                  properties:
-                    Identification:
-                      type: string
-                    NumberOfIncludedSegments:
-                      type: string
-                    TransactionSetControlNumber:
-                      type: string
+                Header_Identifier:
+                  type: string
+                Header_ControlNumber:
+                  type: string
+                Header_Version:
+                  type: string
+                Header_DocumentType:
+                  type: string
+                ShipNotice_Identification:
+                  type: string
+                ShipNotice_Date:
+                  type: string
+                ShipNotice_Time:
+                  type: string
+                ShipNotice_TimeZone:
+                  type: string
+                HierarchicalLevel_Identification:
+                  type: string
+                HierarchicalLevel_HierarchicalID:
+                  type: string
+                HierarchicalLevel_HierarchicalParentID:
+                  type: string
+                HierarchicalLevel_HierarchicalLevelCode:
+                  type: string
+                ItemIdentification_Identification:
+                  type: string
+                ItemIdentification_ProductID:
+                  type: string
+                ItemIdentification_ProductDescription:
+                  type: string
+                ItemIdentification_ProductType:
+                  type: string
+                ItemIdentification_ProductCode:
+                  type: string
+                ItemDetail_Identification:
+                  type: string
+                ItemDetail_QuantityShipped:
+                  type: string
+                ItemDetail_PackagingInfo:
+                  type: string
+                ItemDetail_Weight:
+                  type: string
+                ItemDetail_WeightUnit:
+                  type: string
+                ProductDescription_Identification:
+                  type: string
+                ProductDescription_ItemDescription:
+                  type: string
+                ProductDescription_CharacteristicCode:
+                  type: string
+                ProductDescription_AdditionalInfo:
+                  type: string
+                ProductDescription_InfoQualifier:
+                  type: string
+                Name_Identification:
+                  type: string
+                Name_EntityIdentifierCode:
+                  type: string
+                Name_Name:
+                  type: string
+                Name_IdentificationCode:
+                  type: string
+                Name_IdentificationQualifier:
+                  type: string
+                TransactionTotals_Identification:
+                  type: string
+                TransactionTotals_NumberOfLineItems:
+                  type: string
+                TransactionTotals_HashTotal:
+                  type: string
+                TransactionTotals_WeightTotal:
+                  type: string
+                TransactionSetTrailer_Identification:
+                  type: string
+                TransactionSetTrailer_NumberOfIncludedSegments:
+                  type: string
+                TransactionSetTrailer_TransactionSetControlNumber:
+                  type: string
       responses:
         "200":
           description: Successful operation
