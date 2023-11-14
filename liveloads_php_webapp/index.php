@@ -101,9 +101,9 @@
         </div>
     </div>
     <input type="submit" value="Submit"> -->
-    Upload an EDI file:
-  <input type="file" name="fileToUpload" id="fileToUpload">
-  <input type="submit" value="Upload EDI File" name="submit">
+    <label for="file">Upload EDI file:</label>
+    <input type="file" name="file" id="file">
+    <button type="submit" name="submit">Upload</button>
 </form>
 
 
