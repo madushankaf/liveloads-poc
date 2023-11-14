@@ -137,9 +137,14 @@
         $fields .= "SE*".$_POST["number_of_included_segments"] . "*";
         $fields .= $_POST["transaction_set_control_number"] . "~";
 
+        
+        echo "<div>";
+        echo "<div>";
         echo "EDI String:\n";
+        echo "</div>";
         echo $fields;
         echo "\n";
+        echo "</div>";
 
         $clientId = getenv("CLIENT_ID");
         $clientSecret = getenv("CLIENT_SECRET");
@@ -174,11 +179,13 @@
         $contextForApiCall = stream_context_create($optionsForApi);
         $shippingNoticeSaved = file_get_contents('https://8d25823b-969a-43a8-84ae-b71755f068b7-dev.e1-us-east-azure.choreoapis.dev/ftyz/liveloads-edi-proxy/endpoint-8090-8b1/v1/ShipNoticeManifest', false, $contextForApiCall);
 
+        echo "<div>";
+        echo "<div>";
 echo "Shipping Notice Saved:\n";
-
+echo "</div>";
 echo $shippingNoticeSaved;
-
 echo "\n";
+echo "</div>";
 
         // Use the $accessToken as needed
     } ?>
