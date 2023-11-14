@@ -13,93 +13,94 @@
     <div class="columns">
         <div class="column">
             <label for="ship_notice_date">Ship Notice Date:</label>
-            <input type="text" id="ship_notice_date" name="ship_notice_date"><br><br>
+            <input type="text" id="ship_notice_date" name="ship_notice_date" value="2023-01-01"><br><br>
             
             <label for="ship_notice_time">Ship Notice Time:</label>
-            <input type="text" id="ship_notice_time" name="ship_notice_time"><br><br>
+            <input type="text" id="ship_notice_time" name="ship_notice_time" value="12:00:00"><br><br>
             
             <label for="ship_notice_timezone">Ship Notice Timezone:</label>
-            <input type="text" id="ship_notice_timezone" name="ship_notice_timezone"><br><br>
+            <input type="text" id="ship_notice_timezone" name="ship_notice_timezone" value="UTC-05:00"><br><br>
             
             <label for="hierarchical_id">Hierarchical ID:</label>
-            <input type="text" id="hierarchical_id" name="hierarchical_id"><br><br>
+            <input type="text" id="hierarchical_id" name="hierarchical_id" value="123"><br><br>
             
             <label for="hierarchical_parent_id">Hierarchical Parent ID:</label>
-            <input type="text" id="hierarchical_parent_id" name="hierarchical_parent_id"><br><br>
+            <input type="text" id="hierarchical_parent_id" name="hierarchical_parent_id" value="456"><br><br>
             
             <label for="hierarchical_level_code">Hierarchical Level Code:</label>
-            <input type="text" id="hierarchical_level_code" name="hierarchical_level_code"><br><br>
+            <input type="text" id="hierarchical_level_code" name="hierarchical_level_code" value="A"><br><br>
             
             <label for="product_id">Product ID:</label>
-            <input type="text" id="product_id" name="product_id"><br><br>
+            <input type="text" id="product_id" name="product_id" value="789"><br><br>
             
             <label for="product_description">Product Description:</label>
-            <input type="text" id="product_description" name="product_description"><br><br>
+            <input type="text" id="product_description" name="product_description" value="Sample Product"><br><br>
             
             <label for="product_type">Product Type:</label>
-            <input type="text" id="product_type" name="product_type"><br><br>
+            <input type="text" id="product_type" name="product_type" value="Type-A"><br><br>
             
             <label for="product_code">Product Code:</label>
-            <input type="text" id="product_code" name="product_code"><br><br>
+            <input type="text" id="product_code" name="product_code" value="P-123"><br><br>
         </div>
 
         <div class="column">
             <label for="quantity_shipped">Quantity Shipped:</label>
-            <input type="text" id="quantity_shipped" name="quantity_shipped"><br><br>
+            <input type="text" id="quantity_shipped" name="quantity_shipped" value="100"><br><br>
             
             <label for="packaging_info">Packaging Info:</label>
-            <input type="text" id="packaging_info" name="packaging_info"><br><br>
+            <input type="text" id="packaging_info" name="packaging_info" value="Box"><br><br>
             
             <label for="weight">Weight:</label>
-            <input type="text" id="weight" name="weight"><br><br>
+            <input type="text" id="weight" name="weight" value="10.5"><br><br>
             
             <label for="weight_unit">Weight Unit:</label>
-            <input type="text" id="weight_unit" name="weight_unit"><br><br>
+            <input type="text" id="weight_unit" name="weight_unit" value="lbs"><br><br>
             
             <label for="item_description">Item Description:</label>
-            <input type="text" id="item_description" name="item_description"><br><br>
+            <input type="text" id="item_description" name="item_description" value="Description"><br><br>
             
             <label for="characteristic_code">Characteristic Code:</label>
-            <input type="text" id="characteristic_code" name="characteristic_code"><br><br>
+            <input type="text" id="characteristic_code" name="characteristic_code" value="X1"><br><br>
             
             <label for="additional_info">Additional Info:</label>
-            <input type="text" id="additional_info" name="additional_info"><br><br>
+            <input type="text" id="additional_info" name="additional_info" value="Additional Information"><br><br>
             
             <label for="info_qualifier">Info Qualifier:</label>
-            <input type="text" id="info_qualifier" name="info_qualifier"><br><br>
+            <input type="text" id="info_qualifier" name="info_qualifier" value="Q1"><br><br>
             
             <label for="entity_identifier_code">Entity Identifier Code:</label>
-            <input type="text" id="entity_identifier_code" name="entity_identifier_code"><br><br>
+            <input type="text" id="entity_identifier_code" name="entity_identifier_code" value="E-123"><br><br>
             
             <label for="name">Entity Identifier Name:</label>
-            <input type="text" id="name" name="name"><br><br>
+            <input type="text" id="name" name="name" value="Entity Name"><br><br>
         </div>
 
         <div class="column">
             <label for="identification_code">Identification Code:</label>
-            <input type="text" id="identification_code" name="identification_code"><br><br>
+            <input type="text" id="identification_code" name="identification_code" value="ID-789"><br><br>
             
             <label for="identification_qualifier">Identification Qualifier:</label>
-            <input type="text" id="identification_qualifier" name="identification_qualifier"><br><br>
+            <input type="text" id="identification_qualifier" name="identification_qualifier" value="Q-456"><br><br>
             
             <label for="number_of_line_items">Number of Line Items:</label>
-            <input type="text" id="number_of_line_items" name="number_of_line_items"><br><br>
+            <input type="text" id="number_of_line_items" name="number_of_line_items" value="5"><br><br>
             
             <label for="hash_total">Hash Total:</label>
-            <input type="text" id="hash_total" name="hash_total"><br><br>
+            <input type="text" id="hash_total" name="hash_total" value="ABC123"><br><br>
             
             <label for="weight_total">Weight Total:</label>
-            <input type="text" id="weight_total" name="weight_total"><br><br>
+            <input type="text" id="weight_total" name="weight_total" value="50.2"><br><br>
             
             <label for="number_of_included_segments">Number of Included Segments:</label>
-            <input type="text" id="number_of_included_segments" name="number_of_included_segments"><br><br>
+            <input type="text" id="number_of_included_segments" name="number_of_included_segments" value="3"><br><br>
             
             <label for="transaction_set_control_number">Transaction Set Control Number:</label>
-            <input type="text" id="transaction_set_control_number" name="transaction_set_control_number"><br><br>
+            <input type="text" id="transaction_set_control_number" name="transaction_set_control_number" value="TS-789"><br><br>
         </div>
     </div>
     <input type="submit" value="Submit">
 </form>
+
 
     <?php } ?>
 
