@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.post("/shippingNotices", (req, res) => {
   const shippingNotice = req.body;
   console.log(shippingNotice);
-  res.status(200).send("Success");
+  res.status(200).send(shippingNotice);
 });
 
 
